@@ -34,6 +34,9 @@ const Header = () => {
         <Item>
           <Link href="/fast-navigation">Fast Navigation</Link>
         </Item>
+        <Item>
+          <Link href="/dependent">Dependent Request</Link>
+        </Item>
       </List>
     </Wrapper>
   );

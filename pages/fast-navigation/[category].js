@@ -2,31 +2,9 @@ import styled from "styled-components";
 import Link from "next/link";
 import useSWR from "swr";
 import { useRouter } from "next/router";
-
-const Container = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 20px;
-`;
-
-const List = styled.ul`
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  list-style-type: none;
-`;
-
-const Item = styled.li`
-  padding: 5px;
-  cursor: pointer;
-
-  &:hover {
-    font-weight: bolder;
-  }
-`;
+import Container from "@/components/Layout/Container";
+import List from "@/components/Layout/List";
+import Item from "@/components/Layout/Item";
 
 const Items = styled.div`
   display: flex;
@@ -99,7 +77,7 @@ export const Women = () => {
 
 const Category = () => {
   const router = useRouter();
-  console.log(router.query);
+
   return (
     <Container>
       <h2>Fast Navigation</h2>
@@ -111,7 +89,9 @@ const Category = () => {
           <Link href="/fast-navigation/women">Women</Link>
         </Item>
       </List>
-
+      {!router.query.category && (
+        <h3>Cache feature, Loading and Revalidation</h3>
+      )}
       {router.query.category === "men" && <Men />}
       {router.query.category === "women" && <Women />}
     </Container>
