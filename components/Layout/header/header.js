@@ -37,6 +37,9 @@ const Header = () => {
         <Item>
           <Link href="/dependent">Dependent Request</Link>
         </Item>
+        <Item>
+          <Link href="/conditional">Conditional Fetching</Link>
+        </Item>
       </List>
     </Wrapper>
   );
