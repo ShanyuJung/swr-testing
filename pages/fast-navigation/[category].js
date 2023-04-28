@@ -35,9 +35,9 @@ const fetcher = (url) =>
 //       } catch {}
 //     });
 
-export const Men = () => {
+const Tag = ({ tag, title }) => {
   const { data, error, isLoading, isValidating } = useSWR(
-    "https://api.appworks-school.tw/api/1.0/products/men?paging=0",
+    `https://api.appworks-school.tw/api/1.0/products/${tag}?paging=0`,
     fetcher
   );
   // console.log(isLoading, isValidating);
@@ -46,27 +46,7 @@ export const Men = () => {
 
   return (
     <Items>
-      <h3>Men</h3>
-      {data.map((item) => {
-        return <div key={item.id}>{item.title}</div>;
-      })}
-      {/* {isValidating && <div>Validating...</div>} */}
-    </Items>
-  );
-};
-
-export const Women = () => {
-  const { data, error, isLoading, isValidating } = useSWR(
-    "https://api.appworks-school.tw/api/1.0/products/women?paging=0",
-    fetcher
-  );
-  // console.log(isLoading, isValidating);
-  if (error) return <div>failed to load</div>;
-  if (isLoading) return <div>Loading...</div>;
-
-  return (
-    <Items>
-      <h3>Women</h3>
+      <h3>{title}</h3>
       {data.map((item) => {
         return <div key={item.id}>{item.title}</div>;
       })}
@@ -92,8 +72,8 @@ const Category = () => {
       {!router.query.category && (
         <h3>Cache feature, Loading and Revalidation</h3>
       )}
-      {router.query.category === "men" && <Men />}
-      {router.query.category === "women" && <Women />}
+      {router.query.category === "men" && <Tag title="Men" tag="men" />}
+      {router.query.category === "women" && <Tag title="Women" tag="women" />}
     </Container>
   );
 };

@@ -36,9 +36,6 @@ const Dependent = () => {
     fetcher
   );
 
-  console.log(trending);
-  console.log(questions);
-
   return (
     <Container>
       <h2>Dependent</h2>
