@@ -40,6 +40,9 @@ const Header = () => {
         <Item>
           <Link href="/conditional">Conditional Fetching</Link>
         </Item>
+        <Item>
+          <Link href="/multipleArgs">Multiple Arguments</Link>
+        </Item>
       </List>
     </Wrapper>
   );

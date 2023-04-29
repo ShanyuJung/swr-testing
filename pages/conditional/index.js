@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import useSWR from "swr";
 
-const Button = styled.button`
+export const Button = styled.button`
   padding: 10px;
   background-color: #ccc;
   color: #333;
