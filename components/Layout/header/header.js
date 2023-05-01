@@ -46,6 +46,9 @@ const Header = () => {
         <Item>
           <Link href="/interval">Refetch On Interval</Link>
         </Item>
+        <Item>
+          <Link href="/mutate">Mutate</Link>
+        </Item>
       </List>
     </Wrapper>
   );
