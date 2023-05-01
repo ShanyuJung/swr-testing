@@ -43,6 +43,9 @@ const Header = () => {
         <Item>
           <Link href="/multipleArgs">Multiple Arguments</Link>
         </Item>
+        <Item>
+          <Link href="/interval">Refetch On Interval</Link>
+        </Item>
       </List>
     </Wrapper>
   );
